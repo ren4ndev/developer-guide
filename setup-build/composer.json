@@ -1,0 +1,24 @@
+{
+  "name": "apiki/avada-child",
+  "require": {
+    "composer/installers": "^1.7.0",
+    "htmlburger/carbon-fields": "^3.1"
+  },
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "0.7.0",
+    "phpcompatibility/phpcompatibility-wp": "2.1.0",
+    "squizlabs/php_codesniffer": "3.5.3",
+    "wp-coding-standards/wpcs": "2.2.0",
+    "slevomat/coding-standard": "^6.0",
+    "automattic/phpcs-neutron-standard": "^1.5"
+  },
+  "scripts": {
+    "install-codestandards": [
+      "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
+    ],
+    "lint": "phpcs",
+    "lint:fix": "phpcbf"
+  },
+  "type": "wordpress-theme"
+}
+
