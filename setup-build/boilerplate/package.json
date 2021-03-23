@@ -1,0 +1,38 @@
+{
+  "name": "accesspress-lite",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "10.0.3",
+    "eslint": "6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "2.22.1",
+    "husky": "^4.2.0",
+    "node-sass": "~4.13.1",
+    "npm-run-all": "4.1.5",
+    "parcel-bundler": "1.12.3",
+    "stylelint": "13.0.0",
+    "stylelint-config-recommended-scss": "4.1.0",
+    "stylelint-order": "4.0.0",
+    "stylelint-scss": "3.13.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.6.5",
+    "postcss-loader": "^3.0.0",
+    "postcss-modules": "^1.4.1"
+  },
+  "scripts": {
+    "build": "parcel build ./assets/* --public-url ./",
+    "dev": "parcel watch ./assets/* --public-url ./",
+    "lint": "run-s -cl lint:scripts lint:styles",
+    "lint:scripts": "eslint --color --ext .js ./assets/**/*.js",
+    "lint:styles": "stylelint --color ./assets/**/*.scss"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn lint"
+    }
+  }
+}
